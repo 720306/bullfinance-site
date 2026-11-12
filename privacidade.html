@@ -10,7 +10,7 @@ h1{font-size:1.7rem;margin:0}h2{font-size:1.15rem;margin:2rem 0 .4rem;color:var(
 a{color:var(--acc)}.dev{display:flex;align-items:center;gap:10px;margin-bottom:8px}.dev img{width:44px;height:auto;padding:4px;border-radius:8px;background:#fff}li{margin:.25rem 0}footer{margin-top:3rem;color:var(--muted);font-size:.9rem}
 </style></head><body><main>
 <header><img src="icone.png" alt=""><h1>Política de Privacidade</h1></header>
-<p class="sub">Bull Finance · Última atualização: 5 de novembro de 2026</p>
+<p class="sub">Bull Finance · Última atualização: 9 de novembro de 2026</p>
 
 <div class="resumo"><strong>Em resumo:</strong>
 <ul>
@@ -18,6 +18,7 @@ a{color:var(--acc)}.dev{display:flex;align-items:center;gap:10px;margin-bottom:8
 <li>As faturas em PDF e as fotos de notas fiscais são lidas <strong>no próprio aparelho</strong>; os arquivos, as fotos e as senhas não são enviados nem guardados.</li>
 <li>Se a leitura de uma nota ou fatura falhar, você pode <strong>escolher</strong> enviá-la para nós pelo seu e-mail, para melhorarmos o leitor. Nada é enviado sem você pedir.</li>
 <li>A assinatura Premium é cobrada pelo <strong>Google Play</strong>. Nós não recebemos os dados do seu cartão ou forma de pagamento.</li>
+<li>O app envia ao Google Firebase <strong>estatísticas de uso e relatórios de falha anônimos</strong> (quais telas e recursos são usados, erros do app), <strong>sem valores nem lançamentos</strong>. Você pode desligar nas configurações.</li>
 <li>A versão gratuita mostra anúncios do <strong>Google AdMob</strong>, que coleta dados técnicos do aparelho e o ID de publicidade. Você pode recusar anúncios personalizados.</li>
 </ul></div>
 
@@ -28,10 +29,12 @@ a{color:var(--acc)}.dev{display:flex;align-items:center;gap:10px;margin-bottom:8
 <p>Valores, descrições, datas, categorias, recorrências, lembretes e itens de faturas importadas são gravados em um banco de dados <strong>local, no seu aparelho</strong>. Esses dados não são enviados para nós nem para terceiros, e nós não temos acesso a eles.</p>
 <p><strong>Importação de faturas:</strong> quando você escolhe um PDF de fatura de cartão, o app lê o arquivo no próprio celular para extrair os lançamentos. O PDF não é copiado nem enviado. Se o arquivo tiver senha, ela é usada apenas para abri-lo naquele momento e não é armazenada. Ficam guardados no app somente os lançamentos que você decidir importar.</p>
 <p><strong>Leitura de notas fiscais (câmera e galeria):</strong> quando você fotografa ou escolhe a foto de uma nota fiscal, o app usa a câmera ou a galeria <strong>apenas naquele momento</strong> e só com a sua permissão. O texto da foto é reconhecido no próprio aparelho, por um componente do Google (ML Kit) que funciona sem enviar a imagem para a internet. A foto não é guardada nem enviada; ficam no app apenas os dados que você confirmar: loja, CNPJ do estabelecimento, data, itens, valores, forma de pagamento e a chave de acesso da nota (usada para avisar se a mesma nota for lançada duas vezes).</p>
+<p><strong>Leitura pelo QR Code da nota:</strong> se você escolher ler o QR Code (ou se ele aparecer na foto da nota), o app abre a página oficial daquela nota no <strong>site da Secretaria da Fazenda do seu estado</strong> (endereço terminado em “.gov.br”) e lê ali os itens e valores. A consulta é feita <strong>diretamente do seu celular para o site do governo</strong>, como se você abrisse a página no navegador: nada passa pelos nossos servidores. O site da Fazenda segue a política de privacidade do próprio governo do estado. Ficam no app apenas os mesmos dados descritos acima, que você confirma antes de lançar.</p>
 
 <h2>3. Backup</h2>
 <p>O backup manual gera um arquivo no seu aparelho. Você decide onde salvá-lo ou com quem compartilhá-lo; se enviar para serviços de terceiros (por exemplo, Google Drive ou WhatsApp), valem as políticas desses serviços.</p>
 <p>O Android também pode incluir os dados do app no <strong>backup automático da sua conta Google</strong>, se esse recurso estiver ativado no seu aparelho. Esse backup é feito pelo Google, sob as regras dele, e pode ser desativado nas configurações do Android.</p>
+<p><strong>Backup automático no Google Drive (Premium, opcional):</strong> se você ativar, o app pede para entrar com a sua conta Google e a permissão de guardar os próprios dados no seu Drive. A cópia fica na <strong>pasta reservada do app</strong> no seu Google Drive (oculta, acessível só pelo Bull Finance; o app não vê os seus outros arquivos). Os dados vão <strong>diretamente do seu celular para o seu Drive</strong>, sem passar pelos nossos servidores, e guardamos ali as cópias dos últimos 7 dias. O app guarda no aparelho só o e-mail da conta usada, para mostrar onde está o backup. Você pode desligar quando quiser em Configurações; as cópias já feitas ficam no seu Drive, sob as regras do Google, e podem ser apagadas nas configurações do Google Drive (Gerenciar apps).</p>
 
 <h2>4. Notificações</h2>
 <p>Os lembretes de vencimento são agendados e exibidos pelo próprio aparelho. Nenhuma informação é enviada a servidores para isso.</p>
@@ -55,32 +58,43 @@ a{color:var(--acc)}.dev{display:flex;align-items:center;gap:10px;margin-bottom:8
 <p>Com o seu consentimento, os anúncios podem ser <strong>personalizados</strong> com base nesses dados. Sem ele, são exibidos anúncios não personalizados. Você pode mudar essa escolha a qualquer momento nas configurações do app, e também redefinir ou excluir o ID de publicidade em <em>Configurações do Android → Privacidade → Anúncios</em>.</p>
 <p>Saiba mais em <a href="https://policies.google.com/technologies/partner-sites">Como o Google usa dados de apps parceiros</a> e na <a href="https://policies.google.com/privacy">Política de Privacidade do Google</a>.</p>
 
-<h2>8. Bases legais</h2>
+<h2>8. Estatísticas de uso e relatório de falhas (Google Firebase)</h2>
+<p>Para saber quais recursos são mais usados e corrigir erros, o app usa o <strong>Google Analytics para Firebase</strong> e o <strong>Firebase Crashlytics</strong>. Eles recebem:</p>
+<ul>
+<li><strong>Eventos de uso</strong>, só com o nome da ação e números ou rótulos genéricos — por exemplo, “importou uma fatura do banco X”, “leu uma nota com 15 itens”, “criou um limite de gasto”, “abriu o Resumo”;</li>
+<li><strong>Relatórios de falha</strong>, quando o app fecha ou dá erro: o trecho do código onde aconteceu, o modelo do aparelho e a versão do Android e do app;</li>
+<li>dados técnicos coletados automaticamente pelo Firebase, como um identificador da instalação do app, país aproximado, modelo do aparelho e idioma.</li>
+</ul>
+<p>Eles <strong>nunca recebem</strong> valores, descrições, categorias, nomes de lojas, itens de notas ou faturas, nem qualquer outro dado financeiro seu. O app <strong>não</strong> envia o ID de publicidade ao Analytics e não usa essas estatísticas para personalizar anúncios.</p>
+<p>A coleta vem ligada e você pode <strong>desligar a qualquer momento</strong> em <em>Configurações → Privacidade → Estatísticas de uso e falhas</em> (ou já na tela de boas-vindas). Saiba mais em <a href="https://firebase.google.com/support/privacy">Privacidade e segurança no Firebase</a>.</p>
+
+<h2>9. Bases legais</h2>
 <ul>
 <li><strong>Funcionamento do app</strong> (dados que você registra): execução do serviço que você solicitou (art. 7º, V, da LGPD) — e, de todo modo, esses dados permanecem sob seu controle, no seu aparelho.</li>
 <li><strong>Assinatura Premium:</strong> execução do contrato de assinatura (art. 7º, V).</li>
 <li><strong>Envio voluntário de nota ou fatura:</strong> seu consentimento (art. 7º, I).</li>
 <li><strong>Anúncios personalizados:</strong> seu consentimento (art. 7º, I).</li>
+<li><strong>Estatísticas de uso e relatórios de falha anônimos:</strong> legítimo interesse em manter o app funcionando e melhorá-lo (art. 7º, IX), com a opção de desligar a qualquer momento.</li>
 <li><strong>Anúncios não personalizados e medição:</strong> legítimo interesse em manter a versão gratuita (art. 7º, IX).</li>
 </ul>
 
-<h2>9. Compartilhamento</h2>
-<p>Não vendemos dados. O único terceiro que recebe dados por meio do app é o Google: para os anúncios descritos acima, para processar a assinatura Premium e, se você usar, para o backup automático do Android. As fotos de notas e os arquivos de fatura não são enviados a ninguém, a não ser que você mesmo escolha enviá-los para nós, como descrito na seção 5.</p>
+<h2>10. Compartilhamento</h2>
+<p>Não vendemos dados. O único terceiro que recebe dados por meio do app é o Google: para os anúncios, para as estatísticas de uso e relatórios de falha (Firebase), se você não os desligar, para processar a assinatura Premium e, se você usar, para o backup automático do Android e o backup no seu Google Drive. Na leitura pelo QR Code, o seu celular consulta diretamente o site da Fazenda do estado (seção 2). As fotos de notas e os arquivos de fatura não são enviados a ninguém, a não ser que você mesmo escolha enviá-los para nós, como descrito na seção 5.</p>
 
-<h2>10. Retenção e exclusão</h2>
+<h2>11. Retenção e exclusão</h2>
 <p>Os dados ficam no seu aparelho até você apagá-los. Você pode excluir lançamentos e categorias no app, limpar os dados em <em>Configurações do Android → Apps → Bull Finance → Armazenamento</em> ou simplesmente desinstalar o app, o que remove o banco de dados local. Como não temos uma cópia, não há dados seus em nossos sistemas para excluir.</p>
 
-<h2>11. Seus direitos</h2>
+<h2>12. Seus direitos</h2>
 <p>A LGPD garante a você, entre outros, os direitos de confirmação, acesso, correção, eliminação, informação sobre compartilhamento e revogação do consentimento (art. 18). Como seus dados ficam no seu aparelho, a maioria desses direitos você exerce diretamente no app. Para qualquer dúvida ou solicitação, escreva para <a href="mailto:mma@mmasoftwarescorp.com.br">mma@mmasoftwarescorp.com.br</a>. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (<a href="https://www.gov.br/anpd">ANPD</a>).</p>
 
-<h2>12. Segurança</h2>
+<h2>13. Segurança</h2>
 <p>Os dados ficam protegidos pelo isolamento que o Android dá a cada aplicativo. Recomendamos manter o bloqueio de tela ativado e guardar seus arquivos de backup em local seguro.</p>
 
-<h2>13. Público</h2>
+<h2>14. Público</h2>
 <p>O Bull Finance é destinado a maiores de 18 anos.</p>
 
-<h2>14. Alterações</h2>
-<p>Esta política pode ser atualizada — por exemplo, se surgirem recursos como backup na nuvem ou leitura com inteligência artificial. A data no topo indica a versão vigente, e mudanças relevantes serão avisadas no app.</p>
+<h2>15. Alterações</h2>
+<p>Esta política pode ser atualizada — por exemplo, se surgirem recursos como leitura com inteligência artificial. A data no topo indica a versão vigente, e mudanças relevantes serão avisadas no app.</p>
 
 <footer><div class="dev"><img src="mma.png" alt="MMA Softwares Corp"><span>Desenvolvido por <strong>MMA Softwares Corp</strong></span></div><a href="mailto:mma@mmasoftwarescorp.com.br">mma@mmasoftwarescorp.com.br</a><br>
 <a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a></footer>
